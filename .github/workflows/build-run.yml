@@ -10,9 +10,9 @@ on:
   # adds a "run workflow" button to the page
   workflow_dispatch:
 
-  # will be triggered at 04:05 on every 2nd day-of-month from 2 through 30.
+  # runs weekly on sunday 12am!
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0 0 * * SUN'
 
 jobs:
   build-and-run:
