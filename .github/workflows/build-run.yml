@@ -17,6 +17,7 @@ on:
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
+    environment: cole-dev
     steps:
     - uses: actions/checkout@v2
 
