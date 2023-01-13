@@ -10,13 +10,14 @@ on:
   # adds a "run workflow" button to the page
   workflow_dispatch:
 
-  # will be triggered at 00:00 every Sunday
+  # runs weekly on sunday 12am!
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: "5 4 2-30/2 * *"
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
+    environment: cole-dev
     steps:
     - uses: actions/checkout@v2
 
