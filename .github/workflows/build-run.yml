@@ -12,7 +12,7 @@ on:
 
   # runs weekly on sunday 12am!
   schedule:
-    - cron: "5 4 2-30/2 * *"
+    - cron: '0 0 * * SUN'
 
 jobs:
   build-and-run:
