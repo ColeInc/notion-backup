@@ -10,7 +10,7 @@ on:
   # adds a "run workflow" button to the page
   workflow_dispatch:
 
-  # runs weekly on sunday 12am!
+  # runs weekly on sunday 12am !
   schedule:
     - cron: '0 0 * * SUN'
 
