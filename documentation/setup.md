@@ -1,22 +1,27 @@
-### Find Your notion-space-id
+### Find Your notion-space-id and token_v2
 
 1. Login to your [notion profile](https://www.notion.so/login)
 2. Open your developer console of your browser and go to the "Network" tab
 3. Click on "Quick Find" on the Notion menu (should be at the upper left corner) and type something in the search bar
-4. Typing will trigger a new request with the name `search` which should be visible under the network tab. Open that
-   request and copy the value of `spaceId`
+4. Typing will trigger a new request with the name `search` which should be visible under the **network tab**. Open that
+   request and copy the value of `spaceId`. Paste it in your `.env` file as the value for `NOTION_SPACE_ID`
 
 ![testImage](../images/notion-search-request.png)
+
+5. Go to **cookies tab** of that same requests and find the `token_v2` cookie. Paste it in your `.env` file as the value 
+   for `NOTION_TOKEN_V2`. This token (expires after one year and) is valid as long as you don't log out over the 
+   web-UI. Meaning that you can use it in this tool as long as you don't log out. If you do log out (or if the token 
+   expires after one year) then you need to log in again and fetch a new `token_v2` value.
 
 ### Dropbox
 
 1. Create a new app on developer console (https://www.dropbox.com/developers/apps/create)
-2. Go to permissions tab > enable `files.content.write` & `files.content.read` and click "Submit" to save your changes.
-   Make sure you saved these changes **before** you generate your access token
-3. Go to Settings > OAuth 2 > Generate access token > generate > Access token expiration: "no expiration" and copy the
-   generated token
-
-> Long-lived tokens are less secure and will be deprecated in the future.
+2. Select "Scoped access" > "App folder – Access to a single folder created specifically for your app." and give 
+   your app a name
+3. Go to permissions tab > enable `files.content.write` & `files.content.read` and click "Submit" to save your changes.
+   Make sure you saved these changes **before** you generate your access token.
+4. Go to Settings > OAuth 2 > Generate access token > "generate" and copy the generated token. Paste it in your      
+   `.env` file as the value for `DROPBOX_ACCESS_TOKEN`
 
 ### Nextcloud
 
